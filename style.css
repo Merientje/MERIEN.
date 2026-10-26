@@ -1,0 +1,395 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F5F1E9;
+    color: #242424;
+    font-family: 'DM Sans', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 8%;
+    border-bottom: 1px solid #E4DDD2;
+}
+
+.logo {
+    font-size: 28px;
+    letter-spacing: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #242424;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #242424;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #A99881;
+}
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.subtitle {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #847565;
+    margin-bottom: 24px;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.description {
+    max-width: 450px;
+    line-height: 1.8;
+    color: #6B6258;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 16px 35px;
+    background: #242424;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #A99881;
+}
+
+.products, .about {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.products {
+    background: #FFFFFF;
+}
+
+h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.products p, .about p {
+    line-height: 1.8;
+    color: #6B6258;
+}
+
+footer {
+    padding: 35px;
+    text-align: center;
+    font-size: 12px;
+    color: #847565;
+    border-top: 1px solid #E4DDD2;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+}
+
+
+
+/* MERIEN MEGA MENU */
+
+.site-header {
+    position: relative;
+    z-index: 100;
+    background: #F5F1E9;
+}
+
+.mega-dropdown {
+    position: static;
+}
+
+.mega-trigger {
+    display: block;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.07);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.25s ease;
+}
+
+.mega-dropdown:hover .mega-menu,
+.mega-dropdown:focus-within .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 45px 8%;
+}
+
+.mega-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.mega-column h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mega-column a {
+    color: #6B6258;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.mega-column a:hover {
+    color: #A99881;
+}
+
+@media (max-width: 600px) {
+    .mega-inner {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .mega-menu {
+        max-height: 65vh;
+        overflow-y: auto;
+    }
+}
+
+
+
+/* MERIEN COLLECTIES */
+
+.collections {
+    padding: 100px 8%;
+    text-align: center;
+    background: #FFFFFF;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 50px auto 0;
+}
+
+.collection-card {
+    text-decoration: none;
+    color: #242424;
+    text-align: left;
+    overflow: hidden;
+}
+
+.collection-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.collection-card:hover img {
+    transform: scale(1.03);
+}
+
+.collection-card h3 {
+    margin-top: 18px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* MERIEN LUXE COLLECTIEBANNERS */
+
+.collection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 50px auto 0;
+}
+
+
+.collection-banner {
+    position: relative;
+    display: block;
+    height: 550px;
+    overflow: hidden;
+    text-decoration: none;
+    background: #242424;
+}
+
+
+
+.collection-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+    transition: transform 0.7s ease;
+}
+
+
+.collection-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.60),
+        rgba(0,0,0,0.05)
+    );
+    transition: background 0.4s ease;
+}
+
+.banner-content {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    color: white;
+    transition: transform 0.4s ease;
+}
+
+.banner-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 55px);
+    font-weight: 400;
+}
+
+.banner-arrow {
+    font-size: 40px;
+    transition: transform 0.4s ease;
+}
+
+/* ANIMATIE */
+
+
+.collection-banner:hover img {
+    transform: scale(1.03);
+}
+
+
+.collection-banner:hover .banner-content {
+    transform: translateY(-5px);
+}
+
+.collection-banner:hover .banner-arrow {
+    transform: translateX(12px);
+}
+
+.collection-banner:hover::after {
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.15)
+    );
+}
+
+@media (max-width: 600px) {
+    .collection-banner {
+        height: 350px;
+    }
+
+    .banner-content {
+        padding: 25px;
+    }
+
+    .banner-arrow {
+        font-size: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .collection-banner img,
+    .banner-content,
+    .banner-arrow {
+        transition: none;
+    }
+}
